@@ -1,5 +1,6 @@
 import telebot
 import pyshorteners as pysh
+from urllib.parse import urlparse
 import requests
 
 
@@ -24,10 +25,22 @@ def send_text(message):
     #values = {'url': message}
     #r = requests.post(url, params=values)
    # resp = r.text
+    ht = "https://"
     url = message.text
-    resp = pysh.Shortener().tinyurl.short(url)
-    print(message.text, " : ", resp)
-    bot.send_message(message.chat.id,resp)
+    url1 = ht + message.text
+    #resp = pysh.Shortener().tinyurl.short(url)
+    parts = urlparse(url)
+    parts1 = urlparse(url1)
+    if not parts.scheme or not parts.netloc:
+        if not parts1.scheme or not parts1.netloc:
+            bot.send_message(message.chat.id,"Данный текст не является ссылкой.")
+        #"not an url"
+        else:
+            resp = pysh.Shortener().tinyurl.short(url)
+            bot.send_message(message.chat.id, resp)
+
+        #"yes an url"
+
 
 
 #   if message.text.lower() == 'live':

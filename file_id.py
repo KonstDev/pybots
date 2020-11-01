@@ -2,6 +2,7 @@ import telebot
 
 bot = telebot.TeleBot('yr_token')
 @bot.message_handler(commands=['start'])
+bot.send_message(message.chat.id, "Send me sticker")
 
 @bot.message_handler(content_types=['sticker'])
 def send_sticker(message):

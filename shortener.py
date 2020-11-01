@@ -12,7 +12,7 @@ import requests
 #text1 = "hello"
 # print(HLTV.get_upcoming_matches())
 
-bot = telebot.TeleBot('ur token')
+bot = telebot.TeleBot('yr token')
 @bot.message_handler(commands=['start'])
 def start_message(message):
     bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAANfX3y1pDJrr3kE7WrpnNXAWRnljtwAAuQDAAKJ6uUH96krUY45jZ8bBA')

@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('1369769019:AAFBRjh_EN_awo-iToihsrloqSliXmW598E')
+bot = telebot.TeleBot('')
 #print(HLTV.get_upcoming_matches())
 @bot.message_handler(commands=['start'])
 def start_message(message):

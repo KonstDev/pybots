@@ -3,7 +3,7 @@ import random
 from telebot import types
 import datetime
 
-bot = telebot.TeleBot('1457557479:AAELLNrkOVaurYh5rQh9bnPN95-UTvnMe70')
+bot = telebot.TeleBot('')
 
 
 @bot.message_handler(commands=['uid'])
@@ -29,7 +29,6 @@ def query_text(query):
     else:
         rrrstr = 'Tyanochku by'
     #rrrstr = 'I am ' + str(rrr) + '% python!'
-    tyan = 'Tyanochku by'
     single_msg = types.InlineQueryResultArticle(
         id="1", title="Насколько Вы технарь или гуманитарий?",
         input_message_content=types.InputTextMessageContent(message_text = rrrstr),
